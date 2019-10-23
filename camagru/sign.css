@@ -5,14 +5,14 @@ form
 {
     margin-top: -58px;
 }
-.register{
-    height: 750px;
-    width: 500px;
+.sign{
+    height: 645px;
+    width: 440px;
     background-color:white;
     margin: 100px auto;
     border-radius: 15px;
 }
-.register h1 {
+.sign h1 {
     text-align: center;
     color: #5b6574;
     font-size: 24px;
@@ -27,13 +27,13 @@ form
     margin-right: auto;
 
 }
-.register form {
+.sign form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 100px;
 }
-.register form label {
+.sign form label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,17 +42,17 @@ form
     background-color: #3274d6;
     color: #ffffff;
 }
-.register form input[type="password"], .register form input[type="password-re"], .register form input[type="text"], .register form input[type="email"] {
+.sign form input[type="password"], .sign form input[type="text"]{
     width: 300px;
-    height: 40px;
+    height: 46px;
     border: 1px solid #dee0e4;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     padding: 0 15px;
 }
-.register form input[type="submit"] {
+.sign form input[type="submit"] {
     width: 7%;
     padding: 15px;
-    margin-top: 82px;
+    margin-top: 72px;
     margin-right: 20px;
     background-color: #3274d6;
     border: 0;
@@ -63,7 +63,7 @@ form
     border-radius: 5px;
 }
 
-.register form input[type="submit"] {
+.sign form input[type="submit"] {
     width: 7%;
     padding: 15px;
     margin-top: 72px;
@@ -105,4 +105,7 @@ form
     border: 1px;
     margin-left: 10px;
     
+}
+.box{
+    margin-top: 20%;
 }
