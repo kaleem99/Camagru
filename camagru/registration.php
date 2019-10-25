@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>user registration</title>
-</head>
-<body>
+<!-- <?php
+    session_start();
 
-</body>
 
-</html>
+        // include("connection.php");
+        // include("register.php");
+
+
+        if(isset($_POST['submit']))
+        {
+            $username = $_POST("Username");
+            $email = $_POST("email");
+        }
+        echo "username";
+?> -->

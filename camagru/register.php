@@ -1,3 +1,28 @@
+<?php
+
+include("connection.php");
+
+if(isset($_POST['register'])){
+    echo 'User registered\n';
+    $name = $_POST['Name'];
+    $username = $_POST['Username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $password2 = $_POST['password_confirmation'];
+
+    if ($password != $password2)
+    {
+        echo "passwords do not match";
+        exit();
+    }
+
+    $query = "INSERT INTO `users` (`fullname`, `username`, `email`, `passwd`) VALUES ('$name', '$username', '$email', '$password')";
+    $db->query($query);
+    echo 'User registered 2\n';
+    
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,19 +30,11 @@
 <link rel="stylesheet" type="text/css" href="register.css">
 </head>
 <body>
-    <div>
-        <?php
-        if(isset($_POST['register'])){
-            echo 'User submitted';
-        }
-        ?>
-
-    </div>
 <div class = "register">
     <img class="pic" src="http://www.createmepink.com/wp-content/uploads/st/thumb-stock-illustration-sketch-instagram-modern-camera-logo.jpg">
     <div class="box">
         <br>
-    <form action="register.php" method="post" autocomplete="off" onsubmit="return handleRegistration();">
+    <form action="register.php" method="post" autocomplete="off">
         
         <input type="text" name="Name" placeholder="Name" id="name" required>
 
@@ -27,10 +44,10 @@
 		
         <input type="password" name="password" placeholder="Password" id="password" required>
         
-        <input type="password" name="password confirmation" placeholder="Password Confirmation" id="password confirmation" required>
+        <input type="password" name="password_confirmation" placeholder="Password Confirmation" id="password confirmation" required>
 
-        <a onclick="location.href = '#';"><input type="submit" class="button1" id = "register" value="Register"  name="register" Register></a>
-        <a onclick="location.href = 'sign.html';"><input type="submit" class="button2" value="Sign in"></a>
+        <a onclick="location.href = '';"><input type="submit" class="button1" id = "register" value="register"  name="register"></a>
+        <a onclick="location.href = 'sign.php';"><input type="submit" class="button2" value="Sign in"></a>
         <br>
         <br>
         
