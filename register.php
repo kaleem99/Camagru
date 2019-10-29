@@ -1,6 +1,9 @@
 <?php
 
 include("connection.php");
+include("form.php");
+//include("homepage.php");
+
 
 if(isset($_POST['register'])){
     $name = $_POST['Name'];
@@ -8,21 +11,39 @@ if(isset($_POST['register'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password2 = $_POST['password_confirmation'];
-    
     if ($password != $password2)
     {
         echo "passwords do not match";
         exit();
     }
+
+    $check_email = $db->prepare("SELECT email FROM users WHERE email = ?");
+    $check_email->execute([$email]);
+    $check_username = $db->prepare("SELECT username FROM users WHERE username = ?");
+    $check_username->execute([$username]);
+    // if ($check_email->rowCount() > 0)
+    // {
+    //     echo "email already exists";
+    //     exit();
+    // }
+    // else if ($check_username->rowCount() > 0)
+    // {
+    //     echo "username already exists";
+    //     exit();
+    // }
+    if ($check_username->rowCount() > 0 || $check_email->rowCount() > 0)
+    {
+        echo "username or email already exists";
+        exit();
+    }
+
     $hashed = password_hash($password, PASSWORD_DEFAULT);
     $query = "INSERT INTO `users` (`fullname`, `username`, `email`, `passwd`) VALUES ('$name', '$username', '$email', '$hashed')";
     $db->query($query);
-    echo 'User registered 2\n';
-    header("location: http://localhost:8080/CAMAGRU/homepage.php");
-    
+    echo "User registered 2\n";
+    header("location: http://localhost:8080/CAMAGRU/homepage.php");    
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,4 +113,5 @@ if(isset($_POST['register'])){
 
 
 </html>
+
 

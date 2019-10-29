@@ -1,3 +1,37 @@
 body{
     background-color: #ed5c4a;
 }
+.home{
+    width: 550px;
+    height: 780px;
+    background-color: white;
+    margin: auto;
+    margin-top: 80px;
+    border-radius: 15px;
+}
+.top{
+    width: 1300px;
+    height: 80px;
+    background-color: white;
+    margin: auto;
+    border-radius: 15px;
+}
+.top1{
+    background-color: #3274d6;
+    width: 500px;
+    height: 730px;
+    margin: auto;
+    border-radius: 15px;
+    margin-top: 70px;
+}
+.info{
+    width: 90px;
+    height: 90px;    
+}
+.icon{
+    width: 70px;
+    height: 70px;
+}
+.text{
+    color: #3274d6;
+}
