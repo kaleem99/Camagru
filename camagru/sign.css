@@ -49,8 +49,8 @@ form
     margin-bottom: 30px;
     padding: 0 15px;
 }
-.sign form input[type="submit"] {
-    width: 7%;
+/* .sign form input[type="submit"] {
+    width: 130px;
     padding: 15px;
     margin-top: 72px;
     margin-right: 20px;
@@ -60,11 +60,11 @@ form
     font-weight: bold;
     color: #ffffff;
     transition: background-color 0.2s;
-    border-radius: 5px;
-}
+    border-radius: 5px; 
+}*/
 
 .sign form input[type="submit"] {
-    width: 7%;
+    width: 130px;
     padding: 15px;
     margin-top: 72px;
     margin-left: 20px;

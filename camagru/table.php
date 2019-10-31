@@ -6,7 +6,7 @@ $sql = "CREATE TABLE  IF NOT EXISTS users (
     fullname VARCHAR(30) NOT NULL,
     username VARCHAR(10) NOT NULL,
     email VARCHAR(30) NOT NULL,
-    passwd VARCHAR(20) NOT NULL
+    passwd VARCHAR(255) NOT NULL
     )";
 $db->exec($sql);
 ?>

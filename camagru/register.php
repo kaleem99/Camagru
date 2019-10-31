@@ -1,28 +1,63 @@
 <?php
 
 include("connection.php");
+include("form.php");
+//include("homepage.php");
+
 
 if(isset($_POST['register'])){
-    echo 'User registered\n';
     $name = $_POST['Name'];
     $username = $_POST['Username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password2 = $_POST['password_confirmation'];
-
     if ($password != $password2)
     {
         echo "passwords do not match";
         exit();
     }
 
-    $query = "INSERT INTO `users` (`fullname`, `username`, `email`, `passwd`) VALUES ('$name', '$username', '$email', '$password')";
+    $check_email = $db->prepare("SELECT email FROM users WHERE email = ?");
+    $check_email->execute([$email]);
+    $check_username = $db->prepare("SELECT username FROM users WHERE username = ?");
+    $check_username->execute([$username]);
+    // if ($check_email->rowCount() > 0)
+    // {
+    //     echo "email already exists";
+    //     exit();
+    // }
+    // else if ($check_username->rowCount() > 0)
+    // {
+    //     echo "username already exists";
+    //     exit();
+    // }
+    if ($check_username->rowCount() > 0 || $check_email->rowCount() > 0)
+    {
+        echo "username or email already exists";
+        exit();
+    }
+
+    $hashed = password_hash($password, PASSWORD_DEFAULT);
+    $query = "INSERT INTO `users` (`fullname`, `username`, `email`, `passwd`) VALUES ('$name', '$username', '$email', '$hashed')";
     $db->query($query);
-    echo 'User registered 2\n';
-    
+    echo "User registered 2\n";
+
+    $to = $email;
+    $subject = "Your password";
+    $message = "<p>Hello user,</p>
+    <p>Thanks for applying at chicken licken.</p>
+    <p>Your email is: <b>atitus@chickenlicken.com</b></p>
+    ";
+    $from = "kaleemnike1@gmail.com";
+    $headers = "MIME-Version: 1.0" . "\n";
+    $headers .= "Content-type:text/html;charset=iso-8859-1" . "\n";
+    $headers .= "From: $from" . "\n";
+    // Send email
+    mail($to,$subject,$message,$headers);
+    // Inform the user
+    echo "Thanks for registering! We have just sent you an email with your password.";  
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,4 +127,5 @@ if(isset($_POST['register'])){
 
 
 </html>
+
 

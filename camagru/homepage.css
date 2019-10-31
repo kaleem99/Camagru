@@ -1,3 +1,16 @@
 body{
     background-color: #ed5c4a;
 }
+.home{
+	background-color:white;
+    margin: 50px auto;            
+    width: 1600px;
+    height: 900px;
+    border-radius: 15px;
+}
+.camera{
+    background-color: #3274d6;
+    margin: 10px auto;
+    width: 600px;
+    height: 400px;
+}

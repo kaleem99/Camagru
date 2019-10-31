@@ -1,28 +1,58 @@
 <?php
-   include("connection.php");
+   
    session_start();
+   include("connection.php");
    
-   
-   if($_POST['username'] != NUll) {
-      echo $_POST['username'];
+   if(isset($_POST['sign'])){
+      $username = $_POST['username'];
+      $password = $_POST['password'];
+      // $hashed = password_hash($password, PASSWORD_DEFAULT);
 
-      $username =$_POST['username'];
-      $password =$_POST['password'];
-
-      $password = md5($password);
-      $sql = "SELECT * FROM users WHERE username = $username AND password = $password";
-      $result = $db->exec($sql);
-
-      
-      if (count($result) == 1) {
-         $_SESSION['message'] = "You are now logged in";
-         $_SESSION['username'] = $username;
-         header("location: homepage.php");
+      $check_username = $db->prepare("SELECT * FROM users WHERE username = ?");
+      $check_username->execute(array($username));
+      // $check_password = $db->prepare("SELECT passwd FROM users WHERE passwd = ?");
+      // $check_password->execute([$password]);
+      $user = $check_username->fetch(PDO::FETCH_ASSOC);
+      //var_dump($user['passwd']);
+      //die();
+      $hashed = $user['passwd'];
+      if (password_verify($password, $hashed))
+      {
+         $_SESSION["username"]= $username;
+         echo "Correct";
+         header("Location: homepage.php");
       }
-      else{
-         $_SESSION['message'] = "Username/password combination is incorrect";
+      else
+      {
+         echo "Incorrect";
       }
    }
+
+      
+   //    if ($check_username->rowCount() > 0 && $check_password->rowCount() > 0)
+   //    {
+   //        echo "you are no logged in";
+   //        exit();
+   //        header("Location: http://localhost:8080/camagru/homepage.php");
+   //    }
+   //    else if ($check_username->rowCount() == 0 || $check_password->rowCount() == 0)
+   //    {
+   //       echo "please check your username or password";
+   //    }
+   // }
+   // $username = $_POST['username'];
+   // $password = $_POST['password'];
+   // $db->execute(array(':username' => $username));
+
+   // $row = $db->fetch(PDO::FETCH_ASSOC);
+   // session_regenerate_id();
+   // $_SESSION["authorised"] = true;
+   // $_SESSION["sess_username"] = $row['username'];
+   // $_SESSION["sess_password"] = row['password'];
+   // session_write_close();
+   // header("Location: http://localhost:8080/CAMAGRU/homepage.php");
+
+
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +73,7 @@
         <input type="password" name="password" placeholder="Password" id="password" required>
 
         <a onclick="location.href = 'Register.php';"><input type="submit" class="button1" id = "register" value="register" Register></a>
-        <a onclick="location.href = 'sign.php';"><input type="submit" class="button2" id = "sign" value="Sign in" sign></a>
+        <a onclick="location.href = 'sign.php';"><input type="submit" class="button2" id = "sign" value="Sign in"  name= "sign" sign></a>
         <br>
         <br>
         
