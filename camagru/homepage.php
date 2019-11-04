@@ -7,8 +7,9 @@
 <body>
 
 <div class="home">
+
     <div class="camera">
-hjhjkj
+
     </div>
 </div>
 </body>

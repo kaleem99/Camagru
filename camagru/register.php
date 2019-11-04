@@ -41,21 +41,23 @@ if(isset($_POST['register'])){
     $query = "INSERT INTO `users` (`fullname`, `username`, `email`, `passwd`) VALUES ('$name', '$username', '$email', '$hashed')";
     $db->query($query);
     echo "User registered 2\n";
-
-    $to = $email;
+  
+    $to = "$email";
     $subject = "Your password";
-    $message = "<p>Hello user,</p>
-    <p>Thanks for applying at chicken licken.</p>
-    <p>Your email is: <b>atitus@chickenlicken.com</b></p>
-    ";
-    $from = "kaleemnike1@gmail.com";
+    $message = "<a href=http://localhost:8080/camagru/email_validation.php?username=$username>link</a>.<p>Hello: $name</p>
+    
+    <p>Thanks for Registering.</p>
+    <p>Your email is: <b>$email</b></p>";
+    
+    $from = "kaleem1999@outlook.com";
     $headers = "MIME-Version: 1.0" . "\n";
     $headers .= "Content-type:text/html;charset=iso-8859-1" . "\n";
     $headers .= "From: $from" . "\n";
     // Send email
     mail($to,$subject,$message,$headers);
     // Inform the user
-    echo "Thanks for registering! We have just sent you an email with your password.";  
+    echo "Thanks for registering! We have just sent you an email with a link to the login page.<br>";
+    // echo " <a href='sign.php'>Click here</a>";
 }
 ?>
 <!DOCTYPE html>

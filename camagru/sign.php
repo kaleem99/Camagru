@@ -24,7 +24,7 @@
       }
       else
       {
-         echo "Incorrect";
+         echo "Your Username  or Password is Incorrect";
       }
    }
 
