@@ -1,0 +1,108 @@
+body{
+    background-color: #ed5c4a;
+}
+form
+{
+    margin-top: -58px;
+}
+.register{
+    height: 750px;
+    width: 500px;
+    background-color:white;
+    margin: 100px auto;
+    border-radius: 15px;
+}
+.register h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.pic {
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.register form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 100px;
+}
+.register form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+   height: 50px;
+    background-color: #3274d6;
+    color: #ffffff;
+}
+.register form input[type="password"], .register form input[type="password-re"], .register form input[type="text"], .register form input[type="email"] {
+    width: 300px;
+    height: 46px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 25px;
+    padding: 0 15px;
+}
+.register form input[type="submit"] {
+    width: 7%;
+    padding: 15px;
+    margin-top: 82px;
+    margin-right: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    border-radius: 5px;
+}
+
+.register form input[type="submit"] {
+    width: 7%;
+    padding: 15px;
+    margin-top: 72px;
+    margin-left: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    border-radius: 5px;
+}
+.picture {
+    width: 250px;
+    height: 200px;
+}
+.ref {
+    position: absolute;
+    left: 10%;
+    margin-left: auto;
+}
+.button1{
+    background-color: #3274d6;
+    width: 140px;
+    height: 50px;
+    border-radius: 15px;
+    position: absolute;
+    right: 50%;
+    border: 1px;
+    margin-right: 10px;
+}
+.button2{
+    background-color: #3274d6;
+    width: 140px;
+    height: 50px;
+    border-radius: 15px;
+    position: absolute;
+    left: 50%;
+    border: 1px;
+    margin-left: 10px;
+    
+}
