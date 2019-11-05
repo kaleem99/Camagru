@@ -8,7 +8,7 @@ try{
     // set the PDO error mode to exception
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
-catch(PDOexetion $e){
+catch(PDOException $e){
     echo $e->getMessage();
 }
 ?>
