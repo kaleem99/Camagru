@@ -1,6 +1,6 @@
 <?php
    session_start();
-   include("connection.php");
+   include("setup.php");
 //    echo $_SESSION['username'];
    $old_username = $_SESSION['username'];
    

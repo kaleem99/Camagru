@@ -1,7 +1,7 @@
 <?php
    
    session_start();
-   include("connection.php");
+   include("setup.php");
    
    if(isset($_POST['sign'])){
       $username = $_POST['username'];

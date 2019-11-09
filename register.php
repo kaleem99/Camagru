@@ -1,6 +1,6 @@
 <?php
 
-include("connection.php");
+include("setup.php");
 include("form.php");
 //include("homepage.php");
 

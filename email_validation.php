@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("setup.php");
 $msg = "";
 if(isset($_POST['submit'])){
    $username = $_GET['username'];
