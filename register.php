@@ -21,16 +21,7 @@ if(isset($_POST['register'])){
     $check_email->execute([$email]);
     $check_username = $db->prepare("SELECT username FROM users WHERE username = ?");
     $check_username->execute([$username]);
-    // if ($check_email->rowCount() > 0)
-    // {
-    //     echo "email already exists";
-    //     exit();
-    // }
-    // else if ($check_username->rowCount() > 0)
-    // {
-    //     echo "username already exists";
-    //     exit();
-    // }
+    
     if ($check_username->rowCount() > 0 || $check_email->rowCount() > 0)
     {
         echo "username or email already exists";

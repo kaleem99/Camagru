@@ -1,0 +1,152 @@
+body{
+    background-image: url("https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+form
+{
+    margin-top: -58px;
+}
+.update{
+    height: 550px;
+    width: 500px;
+    background-color:white;
+    margin: 160px auto;
+    /* border-radius: 15px; */
+}
+.information{
+  width: 500px;
+  height: 69px;
+  background-color: #3274d6;
+
+}
+.update h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.information h1{
+  color: white;
+}
+.pic {
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.update form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 225px;
+}
+.update form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+   height: 50px;
+    background-color: #3274d6;
+    color: #ffffff;
+}
+.update form input[type="text"], .update form input[type="email"], .update form input[type="password"]{
+    width: 300px;
+    height: 46px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 30px;
+    padding: 0 15px;
+    margin-left: -8px;
+}
+.register form input[type="submit"] {
+    width: 7%;
+    padding: 15px;
+    margin-top: 82px;
+    margin-right: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+    border-radius: 5px;
+}
+
+.picture {
+    width: 250px;
+    height: 200px;
+}
+
+.button1{
+    background-color: #3274d6;
+    width: 105px;
+    height: 51px;
+    color: white;
+}
+
+.button2{
+    background-color: #3274d6;
+    width:105px;
+    height: 51px;
+    color: white;
+}
+
+.button3{
+    background-color: #3274d6;
+    width: 105px;
+    height: 51px;
+    color: white;
+}
+body {
+    margin: 0;
+    padding: 0;
+  }
+   
+  .nav ul {
+    list-style: none;
+    background-color: #ed5c4a;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .nav li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px solid rgb(136, 136, 136);
+  }
+   
+  .nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+  }
+   
+  .nav a:hover {
+    background-color: #005f5f;
+  }
+   
+  .nav a.active {
+    background-color: #3274d6;
+    color: white;
+    cursor: default;
+  }
+   
+  @media screen and (min-width: 600px) {
+    .nav li {
+      width: 120px;
+      border-bottom: none;
+      height: 60px;
+      line-height: 60px;
+      font-size: 1.4em;
+    }
+   
+    /* Option 1 - Display Inline */
+    .nav li {
+      display: inline-block;
+      margin-right: -4px;
+    }
+}

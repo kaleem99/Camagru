@@ -18,8 +18,8 @@ if(isset($_POST['submit']))
     try{
        $sql = "UPDATE `users` SET `passwd` = '$hashed' WHERE `email` = '$email'";
        $db->exec($sql);
-       header("location: sign.php");
        echo "your password has been reset";
+       header("location: sign.php");
     }
     catch(PDOException $ex){
        $msg = "error";
