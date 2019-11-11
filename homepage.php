@@ -17,6 +17,7 @@
         <li class="gallery"><a href="#">Gallery</a></li>
         <li class="SnapShot"><a href="SnapShot.php">SnapShot</a></li>
         <li class="logout"><a href="sign.php">Logout</a></li>
+        <li class="upload"><a href="upload.php">Upload</a></li>
       </ul>
     </div>
 </body>

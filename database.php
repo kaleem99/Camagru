@@ -12,3 +12,14 @@ $sql = "CREATE TABLE  IF NOT EXISTS users (
 $db->exec($sql);
 ?>
 
+<?php
+include("setup.php");
+$db = new PDO("mysql:host=localhost;dbname=camagru", "root", "Nuhaa2013");
+$sql = "CREATE TABLE IF NOT EXISTS camagru.images (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(10) NOT NULL,
+    image_name VARCHAR(100)
+    )";
+$db->exec($sql);
+?>
+
