@@ -1,5 +1,6 @@
+  
 <?php
-require_once("connection.php");
+require_once("config/setup.php");
 $msg = "";
 if(isset($_POST['submit']))
 {
@@ -11,7 +12,6 @@ if(isset($_POST['submit']))
         echo "password do not match";
         exit();
     }
-
     $hashed = password_hash($password, PASSWORD_DEFAULT);
     // $query = "INSERT INTO users (passwd) VALUES ('$password')";
     // $db->query($query);
@@ -26,9 +26,7 @@ if(isset($_POST['submit']))
        echo $msg;
     }
 }
-
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +38,7 @@ if(isset($_POST['submit']))
     <img class="pic" src="http://www.createmepink.com/wp-content/uploads/st/thumb-stock-illustration-sketch-instagram-modern-camera-logo.jpg">
     <div class="box">
         <br>
-    <form action="" method="post" autocomplete="off">
+    <form action="reset_password.php" method="post" autocomplete="off">
         <h3>Please type in your new password</h3>
 		
         <input type="password" name="password" placeholder="Password" id="password" required>

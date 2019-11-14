@@ -1,95 +1,73 @@
-body {
+/* body {
    background-image: url("https://images.pexels.com/photos/1670187/pexels-photo-1670187.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  }
-  header{
-    height: 230px;
-  }
+}
+header{
+  height: 230px;
+}*/
 
-  .button1{
-    width: 100px;
-    height: 100px;
-    margin-left: 537px;
-    margin-top: 72px;
-  }
+.button1{
+  width: 105px;
+  height: 100px;
+  margin: 200px auto;
+  border-radius: 50px;
+}
+/* 
+.nav ul {
+  list-style: none;
+  background-color: #ed5c4a;
+  text-align: center;
+  padding: 0;
+  margin: -8px;
+}
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid rgb(136, 136, 136);
+}
+   
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+  
+.nav a:hover {
+  background-color: #005f5f;
+}
+  
+.nav a.active {
+  background-color: #3274d6;
+  color: white;
+  cursor: default;
+}
+   
+@media screen and (min-width: 600px) {
+.nav li {
+  width: 120px;
+  border-bottom: none;
+  height: 60px;
+  line-height: 60px;
+  font-size: 1.4em;
+}
 
-  .nav ul {
-    list-style: none;
-    background-color: #ed5c4a;
-    text-align: center;
-    padding: 0;
-    margin: -8px;
-  }
-  .nav li {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.2em;
-    line-height: 40px;
-    height: 40px;
-    border-bottom: 1px solid rgb(136, 136, 136);
-  }
-   
-  .nav a {
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    transition: .3s background-color;
-  }
-   
-  .nav a:hover {
-    background-color: #005f5f;
-  }
-   
-  .nav a.active {
-    background-color: #3274d6;
-    color: white;
-    cursor: default;
-  }
-   
-  @media screen and (min-width: 600px) {
-    .nav li {
-      width: 120px;
-      border-bottom: none;
-      height: 60px;
-      line-height: 60px;
-      font-size: 1.4em;
-    }
-   
-    /* Option 1 - Display Inline */
-    .nav li {
-      display: inline-block;
-      margin-right: -4px;
-    }
-   
-    /* Options 2 - Float
-    .nav li {
-      float: left;
-    }
-    .nav ul {
-      overflow: auto;
-      width: 600px;
-      margin: 0 auto;
-    }
-    .nav {
-      background-color: #444;
-    }
-    */
-  }
-  #container{
-    width: 30%;
-    height: 375px;
-    border: 10px #333 solid;
-    margin: auto;
-   
+.nav li {
+  display: inline-block;
+  margin-right: -4px;
+}
+}
+#container{
+  width: 30%;
+  height: 375px;
+  border: 10px #333 solid;
+  margin: auto; 
 }
   #videoElement{
     width: 30%;
     height: 375px;
     /* background-color: #666; */
-    position: absolute;
+    /* position: absolute;
     margin: auto;
-}
-.image{
-  width: 30%;
-  height: 375px;
-  position: absolute;
-  margin: auto;
-}
+} */

@@ -10,7 +10,6 @@ form
     width: 500px;
     background-color:white;
     margin: 160px auto;
-    /* border-radius: 15px; */
 }
 .information{
   width: 500px;
@@ -144,7 +143,6 @@ body {
       font-size: 1.4em;
     }
    
-    /* Option 1 - Display Inline */
     .nav li {
       display: inline-block;
       margin-right: -4px;

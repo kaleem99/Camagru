@@ -1,5 +1,5 @@
 <?php
-include("setup.php");
+include("config/setup.php");
 $msg = "";
 if(isset($_POST['submit'])){
    $username = $_GET['username'];
@@ -15,7 +15,6 @@ if(isset($_POST['submit'])){
    }
 
 }
-
 
 ?>
 

@@ -1,16 +1,31 @@
-<?php
-       $to = "abdussamadtitus@gmail.com";
-       $subject = "Your password";
-       $message = "<p>Hello Homer,</p>
-       <p>Thanks for registering.</p>
-       <p>Your password is: <b>springfield</b></p>
-       ";
-       $from = "kaleemnike1@gmail.com";
-       $headers = "MIME-Version: 1.0" . "\n";
-       $headers .= "Content-type:text/html;charset=iso-8859-1" . "\n";
-       $headers .= "From: $from" . "\n";
-       // Send email
-       mail($to,$subject,$message,$headers);
-       // Inform the user
-       echo "Thanks for registering! We have just sent you an email with your password.";
-   ?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>CAMAGRU</title>
+<link rel="stylesheet" type="text/css" href="reset_password.css">
+</head>
+<body>
+<div class = "sign">
+    <img class="pic" src="http://www.createmepink.com/wp-content/uploads/st/thumb-stock-illustration-sketch-instagram-modern-camera-logo.jpg">
+    <div class="box">
+        <br>
+    <form action="" method="post" autocomplete="off">
+        <h3>Please type in your new password</h3>
+		
+        <input type="password" name="password" placeholder="Password" id="password" required>
+        
+        <input type="password" name="password_confirmation" placeholder="Password Confirmation" id="password confirmation" required>
+
+        <input type="submit" name="submit" value="Reset">
+
+        <br>
+        <br>
+        
+    </form>
+    <br><br>
+        <br><br>
+    </div>
+</body>
+
+
+</html>

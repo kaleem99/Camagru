@@ -1,58 +1,14 @@
-<!-- 
-// include("setup.php");
-// echo "hello world";
-// if (isset($_POST['but_upload'])){
-//     $filename = $FILES['file']['name'];
-//     $target_dir = "upload/";
-//     if ($filename != ''){
-
-//         $target_file = $target_dir.basename($_FILES['file']['name']);
-
-//         $extension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-//         $extensions_arr = array("jpg","jpeg","png","gif");
-
-//         if(in_array($extension,$extensions_arr)){
-
-//             $image_base64 = base64_encode(file_get_contents($_Files['file']
-//             ['tmp_name']));
-
-//             $image = "data::image/".$extension.";base64,".$image_base64;
-
-//             if (move_uploaded_file($_FILES['file']['tmp_name'], $target_file)){
-
-//                 $query = "INSERT INTO `images` (`image_data`, `image_name`) VALUES ('$filename', '$image.')";
-//                 $db->query($query);
-//             }
-//         }
-//     }
-// }
-?> -->
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<title>Upload</title>
-
-</head>
-
-<body>
-    <form method='post' action='' enctype="multipart/form-data">
-        <input type="file" name ="file">
-        <input type="submit" name="but_upload">
-    </form>
-</body>
-
-</html> -->
-
 <?php
-include("setup.php");
-// $db = connectiondb();
+session_start();
+if(!isset($_SESSION['success']))
+{
+    header("location: sign.php");
+}
+include("config/setup.php");
 if (isset($_POST['submit']))
 {
     session_start();
     $username = $_SESSION['username'];
-    // $username = $_SESSION['log_in'];
     $file = $_FILES['file'];
     $fileName = $_FILES['file']['name'];
     $fileTmpName = $_FILES['file']['tmp_name'];
@@ -65,7 +21,6 @@ if (isset($_POST['submit']))
     $allowed = array('jpg', 'jpeg', 'png', 'pdf');
     if (in_array($fileActualExt, $allowed))
     {
-        echo "Felicia is a goga";
         if ($fileError ===0)
         {
             if ($fileSize < 1000000)
@@ -77,8 +32,8 @@ if (isset($_POST['submit']))
                 $check = "INSERT INTO camagru.images (username, image_name) VALUES(?,?)";
                 $sql = $db->prepare($check);
                 $sql->execute([$username,$fileNameNew]);
-                header("Location: http://127.0.0.1:8080/camagru/profile.php");
-                echo "hello";
+                header("Location: profile.php");
+                echo "image uploaded";
             }
             else
             {
@@ -98,11 +53,27 @@ if (isset($_POST['submit']))
 }
 ?>
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Upload</title>
-    </head>
-    <body>
+<html lang=''>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="upload.css">
+   <script src="script.js" type="text/javascript"></script>
+   <title>SnapShot</title>
+</head>
+<body class="news">
+    <header>
+        <div class="nav">
+            <ul>
+                <li class="home"><a href="homepage.php">Home</a></li>
+                <li class="profile"><a href="profile.php">Profile</a></li>
+                <li class="gallery"><a href="#">Gallery</a></li>
+                <li class="SnapShot"><a href="SnapShot.php">SnapShot</a></li>
+                <li class="logout"><a href="logout.php">Logout</a></li>
+                <li class="upload"><a class="active">Upload</a></li>
+            </ul>
+        </div>
         <form action = "upload.php" method="POST" enctype="multipart/form-data">
             <input type="file" name="file">
             <button type="submit" name="submit">UPLOAD</button>     

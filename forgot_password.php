@@ -1,5 +1,5 @@
 <?php
-include("setup.php");
+include("config/setup.php");
 
 if(isset($_POST['submit1']))
 {
@@ -11,7 +11,7 @@ if(isset($_POST['submit1']))
         echo "email is registered ";
         $to = "$email";
         $subject = "Your password";
-        $message = "<a href=http://localhost:8080/camagru/reset_password.php?email=$email>link</a>
+        $message = "<a href=http://localhost:8080/kmohamma/reset_password.php?email=$email>link</a>
         
         <p>Thanks for Registering.</p>
         <p>Your email is: <b>$email</b></p>";

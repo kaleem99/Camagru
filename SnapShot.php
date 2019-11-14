@@ -14,9 +14,10 @@
             <ul>
                 <li class="home"><a href="homepage.php">Home</a></li>
                 <li class="profile"><a href="profile.php">Profile</a></li>
-                <li class="gallery"><a href="#">Gallery</a></li>
+                <li class="gallery"><a href="gallery.php">Gallery</a></li>
                 <li class="SnapShot"><a class="active">SnapShot</a></li>
-                <li class="logout"><a href="sign.php">Logout</a></li>
+                <li class="logout"><a href="logout.php">Logout</a></li>
+                <li class="upload"><a href="upload.php">Upload</a></li>
             </ul>
         </div>
         <script src="script.js"></script>
@@ -24,8 +25,8 @@
             <div>
                 <video id="player">Video is loading...</video>
 			</div>
-			<div >
-				<canvas name="image" id="canvas" width="520px" height="340px">Canvas Still Loading</canvas>
+			<div>
+				<canvas class="snap" name="image" id="canvas" width="520px" height="340px">Canvas Still Loading</canvas>
 				<canvas name="image" id="player">Canvas still loading</canvas>
                 <input type="submit" class="button1" value="SnapShot" id="capture">
             </div>
@@ -57,3 +58,4 @@
 </script>
 </body>
 </html>
+

@@ -1,5 +1,5 @@
 <?php
-include("setup.php");
+include("config/setup.php");
 $db = new PDO("mysql:host=localhost;dbname=camagru", "root", "Nuhaa2013");
 $sql = "CREATE TABLE  IF NOT EXISTS users (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -13,7 +13,7 @@ $db->exec($sql);
 ?>
 
 <?php
-include("setup.php");
+include("config/setup.php");
 $db = new PDO("mysql:host=localhost;dbname=camagru", "root", "Nuhaa2013");
 $sql = "CREATE TABLE IF NOT EXISTS camagru.images (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,

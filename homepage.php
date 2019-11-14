@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['success']))
+    {
+      header("location: sign.php");
+    }
+?>
 <!doctype html>
 <html lang=''>
 <head>
@@ -14,9 +21,9 @@
       <ul>
         <li class="home"><a class="active" href="#">Home</a></li>
         <li class="profile"><a href="profile.php">Profile</a></li>
-        <li class="gallery"><a href="#">Gallery</a></li>
+        <li class="gallery"><a href="gallery.php">Gallery</a></li>
         <li class="SnapShot"><a href="SnapShot.php">SnapShot</a></li>
-        <li class="logout"><a href="sign.php">Logout</a></li>
+        <li class="logout"><a href="logout.php">Logout</a></li>
         <li class="upload"><a href="upload.php">Upload</a></li>
       </ul>
     </div>

@@ -1,7 +1,10 @@
 <?php
-   session_start();
-   include("setup.php");
-//    echo $_SESSION['username'];
+    session_start();
+    if(!isset($_SESSION['success']))
+    {
+        header("location: sign.php");
+    }
+   include("config/setup.php");
    $old_username = $_SESSION['username'];
    
    if(isset($_POST['submit_name']))
@@ -41,10 +44,11 @@
     <div class="nav">
         <ul>
             <li class="home"><a href="homepage.php">Home</a></li>
-            <li class="profile"><a class="active" href="#">Profile</a></li>
-            <li class="gallery"><a href="#">Gallery</a></li>
+            <li class="profile"><a class="active">Profile</a></li>
+            <li class="gallery"><a href="gallery.php">Gallery</a></li>
             <li class="SnapShot"><a href="SnapShot.php">SnapShot</a></li>
-            <li class="logout"><a href="sign.php">Logout</a></li>
+            <li class="logout"><a href="logout.php">Logout</a></li>
+            <li class="upload"><a href="upload.php">Upload</a></li>
         </ul>
         </div>
 
@@ -54,7 +58,7 @@
         </div>
         <form action="" method="post" autocomplete="off">
             <div class="one">
-                <input type="text" name="Username" placeholder="username" id="username">
+                <input type="text" name="Username" placeholder="<?php echo $_SESSION['username']?>" id="username" minlength="6">
                 <input type="submit" class="button1" id = "username" value="Update_username"  name="submit_name">
             </div>
             <div class="two">
@@ -62,7 +66,7 @@
          <input type="submit" class="button2" id = "email" value="Update_email"  name="submit_email">
         </div>
         <div class="three">
-        <input type="password" name="password" placeholder="Password" id="password">
+        <input type="password" name="password" placeholder="Password" id="password" minlength="8">
         <input type="submit" class="button3" id = "password" value="Update_password"  name="submit_passwd">
         </div>
         <br>
