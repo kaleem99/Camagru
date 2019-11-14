@@ -23,3 +23,24 @@ $sql = "CREATE TABLE IF NOT EXISTS camagru.images (
 $db->exec($sql);
 ?>
 
+<?php
+include("config/setup.php");
+$db = new PDO("mysql:host=localhost;dbname=camagru", "root", "Nuhaa2013");
+$sql = "CREATE TABLE IF NOT EXISTS camagru.likes (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    imageID VARCHAR(10) NOT NULL,
+    userID VARCHAR(10) NOT NULL
+)";
+$db->exec($sql);
+?>
+
+<?php
+include("config/setup.php");
+$db = new PDO("mysql:host=localhost;dbname=camagru", "root", "Nuhaa2013");
+$sql = "CREATE TABLE IF NOT EXISTS camagru.comments (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    userID VARCHAR(10) NOT NULL,
+    comment VARCHAR(255) NOT NULL
+)";
+$db->exec($sql);
+?>
