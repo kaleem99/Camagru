@@ -13,8 +13,6 @@ if(isset($_POST['submit']))
         exit();
     }
     $hashed = password_hash($password, PASSWORD_DEFAULT);
-    // $query = "INSERT INTO users (passwd) VALUES ('$password')";
-    // $db->query($query);
     try{
        $sql = "UPDATE `users` SET `passwd` = '$hashed' WHERE `email` = '$email'";
        $db->exec($sql);
@@ -27,6 +25,7 @@ if(isset($_POST['submit']))
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

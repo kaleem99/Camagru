@@ -28,13 +28,27 @@ $x = 0;
         $x = 0;
         while ($x < count($array))
         {?>
-        <div class = pic>
+        <!-- <div class = pic> -->
         <a href=""><img src="uploads/<?php echo $array[$x]['image_name']?>"></a>
-        </div>
+        <a href="https://www.facebook.com/"><img src="https://cdn3.iconfinder.com/data/icons/social-icons-5/606/Facebook.png" width="50px" height="50px"></a>
+        <form>
+            <input type="hidden" name="userID" value="anonymous">
+            <textarea name="message"></textarea><br>
+            <button type="submit" name="submit">Comment</button>
+        </form>
+        <br>
+        <!-- <div><form action='likecomment.php' method='POST'>
+       <input type='submit' name='like' placeholder='like' value='like'>
+           </form></div>";
+    <div><form action='likecomment.php' method='POST'>
+       <input type ='text' name='comment' placeholder='comment'>
+       <input type='submit' name='submit_comment' placeholder='comment' value='comment'>
+           </form></div>"; -->
+        <!-- </div> -->
         <?php
         $x++;
         }
-    ?>
+?>
     <!-- Load Facebook SDK for JavaScript -->
 <!-- <div id="fb-root"></div>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6"></script> -->

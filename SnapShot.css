@@ -1,17 +1,19 @@
-/* body {
+body {
    background-image: url("https://images.pexels.com/photos/1670187/pexels-photo-1670187.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
 header{
   height: 230px;
-}*/
+}
 
 .button1{
   width: 105px;
   height: 100px;
-  margin: 200px auto;
+  margin: 12% 45% auto;
   border-radius: 50px;
+  background-color: #3274d6;
+  color: white;
 }
-/* 
+
 .nav ul {
   list-style: none;
   background-color: #ed5c4a;
@@ -59,15 +61,20 @@ header{
 }
 }
 #container{
-  width: 30%;
+  width: 500px;
   height: 375px;
   border: 10px #333 solid;
   margin: auto; 
 }
   #videoElement{
-    width: 30%;
+    width: 500px;
     height: 375px;
-    /* background-color: #666; */
-    /* position: absolute;
+    background-color: #666;
+    position: absolute;
     margin: auto;
-} */
+}
+.pic_stick{
+  background-color: grey;
+  width: 200px;
+  height: 200px;
+}

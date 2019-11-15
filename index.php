@@ -9,6 +9,7 @@ if(isset($_POST['register'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password2 = $_POST['password_confirmation'];
+    $TK = password_hash(time(), PASSWORD_BCRYPT);
     if ($password != $password2)
     {
         echo "passwords do not match";
@@ -35,7 +36,7 @@ if(isset($_POST['register'])){
     }
 
     $hashed = password_hash($password, PASSWORD_DEFAULT);
-    $query = "INSERT INTO `users` (`fullname`, `username`, `email`, `passwd`) VALUES ('$name', '$username', '$email', '$hashed')";
+    $query = "INSERT INTO `users` (`fullname`, `username`, `email`, `passwd`, `Token`) VALUES ('$name', '$username', '$email', '$hashed', '$TK')";
     $db->query($query);
     echo "User registered 2\n";
   

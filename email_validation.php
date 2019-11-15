@@ -22,12 +22,13 @@ if(isset($_POST['submit'])){
 
 <head>
     <title>Validate</title>
+    <link rel="stylesheet" type="text/css" href="email_validation.css">
 </head>
 
 <body>
 <h1>Please press enter to validate your email</h1>
 <form action="" method="POST">
-    <input type="submit" name="submit" value="Submit">
+    <input type="submit" class="btn" name="submit" value="Submit">
 </form>
 </body>
 

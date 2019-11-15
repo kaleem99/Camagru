@@ -74,8 +74,10 @@ if (isset($_POST['submit']))
                 <li class="upload"><a class="active">Upload</a></li>
             </ul>
         </div>
+        <div class="color1">
         <form action = "upload.php" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file">
-            <button type="submit" name="submit">UPLOAD</button>     
+            <button class="file"><input type="file" name="file"></button>
+            <button type="submit" class="btn_submit" name="submit">UPLOAD</button> 
+</div>    
     </body>
 </html>

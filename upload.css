@@ -46,3 +46,17 @@ body{
         margin-right: -4px;
       }
     }
+  .btn_submit{
+    background-color: blanchedalmond;
+    border-color: ;
+  }
+  .file{
+    border-color: blanchedalmond;
+    border-color: black;
+  }
+  .color1{
+    width: 300px;
+    height: 150px;
+    background-color: white;
+    border-color: black;
+  }
