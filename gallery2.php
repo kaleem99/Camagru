@@ -1,123 +1,36 @@
-<?php​
-session_start();
+<?php
 include("config/setup.php");
-if (isset($_SESSION['username']))
-{
-    //current user
-    $user = $_SESSION['username'];
-    $email = $_SESSION['email'];
-​
-    //details belonging to the pictures user
-    $user_image = $_GET['picname'];
-    $user_pic_name = $_GET['liker'];
-    $user_pic_name2 = $_GET['user'];
-​
-    if (isset($_POST['like']))
-    {
-        //Check if the user has liked the image before updating the likes
-        //use picname and username of the liker
-        try
-        {
-            $db = new PDO($db_dsn, $db_username, $db_password);
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-​
-            $stmt3 = $db->prepare("SELECT * FROM likes WHERE picname = :picname AND liker = :liker");
-            $stmt3->execute(array(':picname' => $user_image, ':liker' => $user_pic_name));
-​
-            $results3 = $stmt3->fetchAll();
-            if (count($results3))
-            {
-                header("Location: ../gallery.php?not_allowed");
-                exit();
-            }
-        }
-        catch (PDOException $e)
-        {
-            header("Location: ../gallery.php?server_error");
-            exit();
-        }
-        try
-        {
-            $db = new PDO($db_dsn, $db_username, $db_password);
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-         
-            $stmt = $conn->prepare("INSERT INTO likes (picname, liker, user_image)
-            VALUES (:picname, :liker, :user_image)");
-​
-            $stmt->execute(array(':picname' => $user_image, ':liker' => $user, ':user_image' => $user_pic_name));
-            header("Location: ../gallery.php?liked");
-            exit();
-        }
-        catch(PDOException $e)
-        {
-            header("Location: ../gallery.php?server_error");
-            exit();
-        }
-    }
-    else if (isset($_POST['comment']))
-    {
-        $comment = $_POST['comment'];
-        if ($comment == "")
-        {
-            header("Location: ../gallery.php?no_comment");
-            exit();
-        }
-        //Check if it's a valid comment with alphabets and numbers only.
-        //NO imoji shit.
-​
-        //sending the comment to user and to the database
-​
-        try
-        {
-            $db = new PDO($db_dsn, $db_username, $db_password);
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-​
-            //getting email of the user
-            $stmt = $db->prepare("SELECT * FROM users WHERE user_name = :username");
-            $stmt->execute(array(':username' => $user_pic_name2));
-​
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            $pic_email = $row['email'];
-            $noti = $row['noti'];
-​
-            $stmt = $db->prepare("INSERT INTO comments (name, user_name, user_image, comment)
-            VALUES (:name, :user_name, :user_image, :comment)");
-​
-            $stmt->execute(array(':name' => $user_image, ':user_name' => $user, 'user_image' => $user_pic_name2, ':comment' => $comment));
-​
-            //Sending email to image user
-            if ($noti == 1)
-            {
-                $to = $pic_email;
-                $subject = "Notifications: New comment";
-                $msg = $user." commented on your picture:\n\n".$comment;
-                $headers = 'From: noreply@camagru.com';
-                mail($to, $subject, $msg, $headers);
-                header("Location: ../gallery.php?comment_sent");
-                exit();
-            }
-            else
-            {
-                header("Location: ../gallery.php?comment_sent");
-                exit();
-            }
-        }
-        catch(PDOException $e)
-        {
-            header("Location: ../gallery.php?server_error");
-            exit();
-        }
-​
-    }
-    else
-    {
-        header("Location: ../gallery.php?no_comment");
-        exit();
-    }
-}
-else
-{
-    header("Location: ../gallery.php?hacker_vibes");
-    exit();
-}
+$_SESSION['username']= $username;
+echo $_SESSION['username'];
+$query = $db->query("SELECT * FROM images");
+$array = $query->fetchall();
+$x = 0;
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="gallery.css">
+</head>
+<body>
+<div class="nav">
+<ul>
+    <li class="register"><a href="index.php">Register</a></li>
+    <li class="profile"><a href="sign.php">sign in</a></li>
+    <li class="gallery"><a class="active">Gallery</a></li>
+</ul>
+</div>
+<div class="images">
+    <?php
+        $x = 0;
+        while ($x < count($array))
+        {?>
+        <a href=""><img src="uploads/<?php echo $array[$x]['image_name']?>"></a>
+        <a href="https://www.facebook.com/"><img src="https://cdn3.iconfinder.com/data/icons/social-icons-5/606/Facebook.png" width="50px" height="50px"></a>
+        <br>
+        <?php
+        $x++;
+        }
+?>
+</body>
+</html>

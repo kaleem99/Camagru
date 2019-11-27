@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 include("config/setup.php");
-// include("form.php");
+include("config/database.php");
 
 if(isset($_POST['register'])){
     $name = $_POST['Name'];
@@ -22,6 +22,7 @@ if(isset($_POST['register'])){
     if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) 
     {
         echo "password should be strong";
+        exit();
     }
 
     $check_email = $db->prepare("SELECT email FROM users WHERE email = ?");
@@ -42,7 +43,7 @@ if(isset($_POST['register'])){
   
     $to = "$email";
     $subject = "Your password";
-    $message = "<a href=http://localhost:8080/kmohamma/email_validation.php?username=$username>link</a>.<p>Hello: $name</p>
+    $message = "<a href=http://localhost:8080/camagru/email_validation.php?username=$username>link</a>.<p>Hello: $name</p>
     
     <p>Thanks for Registering.</p>
     <p>Your email is: <b>$email</b></p>";
@@ -66,7 +67,7 @@ if(isset($_POST['register'])){
     <img class="pic" src="http://www.createmepink.com/wp-content/uploads/st/thumb-stock-illustration-sketch-instagram-modern-camera-logo.jpg">
     <div class="box">
         <br>
-    <form action="index.php" method="post" autocomplete="off">
+    <form action="index.php" method="post" autocomplete="on">
         
         <input type="text" name="Name" placeholder="Name" id="name" required>
 
@@ -82,7 +83,17 @@ if(isset($_POST['register'])){
         <a onclick="location.href = 'sign.php';"><input type="submit" class="button2" value="Sign in"></a>
         <br>
         <br>
-        
+        <br>
+        <br>
+        <div class="gallery">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a style="padding: 20px 50px;" href="gallery2.php">Public Gallery</a>
+        </div>
     </form>
     <br><br>
         <br><br>

@@ -1,5 +1,4 @@
 <?php
-   
    session_start();
    include("config/setup.php");
    
@@ -10,8 +9,16 @@
       $check_username->execute(array($username));
       $user = $check_username->fetch(PDO::FETCH_ASSOC);
       $hashed = $user['passwd'];
+      $verified = $user['verified'];
+      if(!$verified)
+      {
+         echo "user account not verified";
+         exit();
+      }
+     
       if (password_verify($password, $hashed))
       {
+         session_start();
          $_SESSION["username"]= $username;
          $_SESSION["success"] = "you have logged in successfully";
          echo "Correct";
@@ -53,6 +60,8 @@
     <br><br>
     <br>
     <a style="padding: 20px 50px;" href="forgot_password.php">Forgot Password</a>
+    <a style="padding: 20px 50px;" href="gallery2.php">Public Gallery</a>
+    
     </div>
    
 </body>

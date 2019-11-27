@@ -12,6 +12,17 @@ if(isset($_POST['submit']))
         echo "password do not match";
         exit();
     }
+
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $number    = preg_match('@[0-9]@', $password);
+
+    if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) 
+    {
+        echo "password should be strong";
+        exit();
+    }
+
     $hashed = password_hash($password, PASSWORD_DEFAULT);
     try{
        $sql = "UPDATE `users` SET `passwd` = '$hashed' WHERE `email` = '$email'";
@@ -37,7 +48,7 @@ if(isset($_POST['submit']))
     <img class="pic" src="http://www.createmepink.com/wp-content/uploads/st/thumb-stock-illustration-sketch-instagram-modern-camera-logo.jpg">
     <div class="box">
         <br>
-    <form action="reset_password.php" method="post" autocomplete="off">
+    <form action="reset_password.php?email=<?php echo $_GET['email']; ?>" method="post" autocomplete="off">
         <h3>Please type in your new password</h3>
 		
         <input type="password" name="password" placeholder="Password" id="password" required>

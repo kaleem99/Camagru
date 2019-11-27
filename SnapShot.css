@@ -1,17 +1,19 @@
 body {
    background-image: url("https://images.pexels.com/photos/1670187/pexels-photo-1670187.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
-header{
-  height: 230px;
-}
+/* header{ */
+  /* height: 230px; */
+/* } */
 
 .button1{
   width: 105px;
   height: 100px;
-  margin: 12% 45% auto;
   border-radius: 50px;
   background-color: #3274d6;
   color: white;
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
 }
 
 .nav ul {
@@ -77,4 +79,47 @@ header{
   background-color: grey;
   width: 200px;
   height: 200px;
+}
+.select-input{
+  width: 50px;
+  height: 30px;
+  margin: 50px auto;
+}
+.container2{
+  width: 500px;
+  height: 100px;
+  margin-left: 65%;
+  margin-top: 14%;
+}
+.btn{
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  background-color:#3274d6;
+  color: white;
+  margin: 10px; 
+}
+.save1{
+  width: 105px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: #3274d6;
+  color: #fff;
+  position:absolute;
+  bottom: 100px;
+  left: 50px;
+}
+.snap{
+  margin-top: 300px;
+}
+.button3{
+  width: 70px;
+  height: 25px;
+  background-color: #ed5c4a;
+  border: none;
+  color: white;
+  font-family: arial;
+  font-weight: 400;
+  border-radius: 20px;
+  margin-left: 133px;
 }

@@ -8,7 +8,8 @@ $sql = "CREATE TABLE  IF NOT EXISTS users (
     email VARCHAR(30) NOT NULL,
     passwd VARCHAR(255) NOT NULL,
     verified BOOLEAN,
-    Token VARCHAR(255) NOT NULL 
+    Token VARCHAR(255) NOT NULL,
+    notify BOOLEAN
     )";
 $db->exec($sql);
 ?>
